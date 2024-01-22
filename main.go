@@ -2,8 +2,7 @@ package main
 
 import (
 	"fmt"
-
-	"exercises"
+	"tests/exercises"
 )
 
 func main() {

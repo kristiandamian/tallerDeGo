@@ -7,6 +7,7 @@ import (
 
 func main() {
 	fmt.Println(exercises.Fibonnacci(10))
-	fmt.Println(exercises.IsPalindrom("Anita lava la tina"))
-	fmt.Println(exercises.IsPalindrom("mock"))
+	fmt.Println("Es palindro", exercises.IsPalindrom("Anita lava la tina"))
+	fmt.Println("Es palindro", exercises.IsPalindrom("mock"))
+	fmt.Println("Go Routine", exercises.FirstRoutine())
 }

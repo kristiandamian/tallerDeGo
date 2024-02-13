@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func lastNode(len int) int {
+func lastNodeLength(len int) int {
 	v := 1
 	for i := len; i > 1; i-- {
 		v = v * i
@@ -53,8 +53,8 @@ func permute(value []string, pos int, c chan []string) {
 
 func getAllPosibilities(value []string) [][]string {
 	var posibilities = [][]string{}
-	lastNodeLength := lastNode(len(value))
-	c := make(chan []string, lastNodeLength)
+	l := lastNodeLength(len(value))
+	c := make(chan []string, l)
 
 	if len(value) == 0 {
 		return nil
@@ -62,7 +62,7 @@ func getAllPosibilities(value []string) [][]string {
 
 	go permute(value, 0, c)
 
-	for i := 0; i < lastNodeLength; i++ {
+	for i := 0; i < l; i++ {
 		posibilities = append(posibilities, <-c)
 	}
 
